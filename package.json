@@ -1,0 +1,10 @@
+{
+  "name": "health-companion",
+  "version": "3.0.0",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm start --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend"
+  }
+}

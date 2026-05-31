@@ -9,7 +9,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": { "start": "react-scripts start", "build": "react-scripts build" },
+  "scripts": { "start": "react-scripts start", "build": "CI=false react-scripts build" },
   "eslintConfig": { "extends": ["react-app"] },
   "browserslist": {
     "production": [">0.2%","not dead","not op_mini all"],

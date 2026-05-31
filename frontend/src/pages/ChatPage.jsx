@@ -377,7 +377,7 @@ export default function ChatPage() {
       };
     }
     setTimeout(() => URL.revokeObjectURL(url), 10000);
-  }, [messages, patient]);
+  }, [messages, patient, apiKey]);
 
   // ── Photo Symptom Analysis ────────────────────────────────
   const handlePhotoUpload = useCallback(async (file) => {
@@ -412,7 +412,8 @@ export default function ChatPage() {
       setLoading(true);
 
       try {
-        const res = await fetch('http://localhost:5000/api/chat/analyze-photo', {
+        const API = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+        const res = await fetch(`${API}/chat/analyze-photo`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -468,7 +469,7 @@ export default function ChatPage() {
       speak(data.message);
     } catch (err) {
       setMessages(p => [...p, { id:Date.now()+'err', role:'bot', time:new Date(), severity:null,
-        text:`An error occurred: ${err.message}\n\nPlease check that the backend is running on port 5000 and that a valid API key is configured.` }]);
+        text:`An error occurred: ${err.message}\n\nPlease check that a valid API key is configured in /settings.` }]);
     } finally {
       setLoading(false);
     }

@@ -194,7 +194,8 @@ export default function MedicinePage() {
     setLoading(true); setSingleResult(null); setError('');
     try {
       const key = apiKey || sessionStorage.getItem('hc_key') || '';
-      const url = `http://localhost:5000/api/medicine/lookup/${encodeURIComponent(name)}${key ? `?apiKey=${encodeURIComponent(key)}` : ''}`;
+      const API = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      const url = `${API}/medicine/lookup/${encodeURIComponent(name)}${key ? `?apiKey=${encodeURIComponent(key)}` : ''}`;
       const res  = await fetch(url);
       const data = await res.json();
       if (!data.found) return setError(data.message || `"${name}" not found. Try the generic name or check the spelling.`);

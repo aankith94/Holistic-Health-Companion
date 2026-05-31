@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 
 const Ctx  = createContext(null);
-const BASE = 'http://localhost:5000/api';
+const BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 export const ApiProvider = ({ children }) => {
   const [apiKey, setApiKeyState] = useState(() => sessionStorage.getItem('hc_key') || '');

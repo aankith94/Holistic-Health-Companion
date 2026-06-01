@@ -19,7 +19,7 @@ const CARDS = [
 
 const ENDPOINTS = [
   {m:'GET',    p:'/api/health/status',              d:'Server health check'},
-  {m:'POST',   p:'/api/settings',                   d:'Validate Gemini API key'},
+  {m:'POST',   p:'/api/health/validate-key',                   d:'Validate Gemini API key'},
   {m:'GET',    p:'/api/chat/symptoms',              d:'Quick symptom suggestions'},
   {m:'POST',   p:'/api/chat/message',               d:'AI chat with patient context and severity'},
   {m:'POST',   p:'/api/chat/summarize-session',     d:'Summarise session for patient memory'},

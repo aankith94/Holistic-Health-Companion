@@ -45,7 +45,7 @@ const CARDS = [
 ];
 
 const STATS = [
-  { n: '500M+', l: 'Rural Indians targeted' },
+  { n: '80%+', l: 'Rural Indians targeted' },
   { n: '70%',   l: 'Villages without doctors' },
   { n: '24/7',  l: 'Always available' },
   { n: '108',   l: 'Emergency helpline integrated' },

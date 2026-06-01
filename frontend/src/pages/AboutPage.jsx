@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TECH = ['React 18','React Router 6','Node.js','Express.js','OpenAI GPT-4o','OpenAI Vision API','Multer','UUID','Web Speech API','Rate Limiting'];
+const TECH = ['React 18','React Router 6','Node.js','Express.js','Multer','UUID','Web Speech API','Rate Limiting'];
 
 const CARDS = [
   { label:'Problem Statement', title:'The Rural Healthcare Gap',
@@ -10,7 +10,7 @@ const CARDS = [
   { label:'Patient Memory', title:'Personalised Healthcare',
     body:'Patients create a profile storing allergies, chronic conditions, and current medications. Every consultation is AI-summarised and stored. The system uses this history to provide safer, more accurate guidance in subsequent sessions.' },
   { label:'Architecture', title:'Secure Full-Stack Design',
-    body:'React frontend communicates with an Express.js REST API. All OpenAI API calls are handled server-side — the API key is never exposed in frontend code. Rate limiting prevents abuse. Every data mutation returns the full updated patient object for immediate UI sync.' },
+    body:'React frontend communicates with an Express.js REST API. All Gemini API calls are handled server-side — the API key is never exposed in frontend code. Rate limiting prevents abuse. Every data mutation returns the full updated patient object for immediate UI sync.' },
   { label:'Impact', title:'Social Relevance',
     body:"This project targets one of India's most persistent public health problems. By providing 24/7 AI medical guidance in local languages with voice support for users with limited literacy, it can meaningfully reduce preventable harm from self-medication in underserved communities." },
   { label:'Future Scope', title:'Planned Extensions',
@@ -19,7 +19,7 @@ const CARDS = [
 
 const ENDPOINTS = [
   {m:'GET',    p:'/api/health/status',              d:'Server health check'},
-  {m:'POST',   p:'/api/health/validate-key',        d:'Validate OpenAI API key'},
+  {m:'POST',   p:'/api/settings',                   d:'Validate Gemini API key'},
   {m:'GET',    p:'/api/chat/symptoms',              d:'Quick symptom suggestions'},
   {m:'POST',   p:'/api/chat/message',               d:'AI chat with patient context and severity'},
   {m:'POST',   p:'/api/chat/summarize-session',     d:'Summarise session for patient memory'},
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <p>
           A full-stack AI-powered medical assistant built for rural India, where 70% of villages lack access to qualified doctors.
           The system provides intelligent symptom assessment, safe medication guidance, multilingual OCR document analysis, drug interaction checking,
-          patient memory, voice input and output, health dashboard analytics, and emergency SOS — all secured through a Node.js backend with the OpenAI GPT-4o API.
+          patient memory, voice input and output, health dashboard analytics, and emergency SOS — all secured through a Node.js backend with the Gemini API.
         </p>
         <div className="tech-tags" style={{ marginTop:20 }}>
           {TECH.map(t => <span key={t} className="tech-tag">{t}</span>)}
